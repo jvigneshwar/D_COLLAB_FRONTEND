@@ -1,0 +1,19 @@
+#search{
+    font-family: 'Inter', sans-serif;
+    margin: 40px 0px 0px 40px;
+    width: 30%;
+    padding: 10px;
+    border: 3px solid var(--pcolor1);
+    color: var(--pcolor2);
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+#search:focus{
+    outline: none;
+}
+
+#search::placeholder{
+    color: var(--pcolor2);
+    opacity: 40%;
+}

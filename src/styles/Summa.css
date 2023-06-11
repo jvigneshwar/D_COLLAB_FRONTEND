@@ -1,0 +1,12 @@
+
+
+#all{
+    width: 90%;
+    height: 80%;
+}
+
+#image{
+    width: 50%;
+    z-index: -100;
+    position: absolute;
+}

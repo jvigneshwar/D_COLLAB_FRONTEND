@@ -1,0 +1,67 @@
+#topNav{
+    width: 85%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo{
+    height: 5vh;
+    margin-left: 20px;
+}
+#notification{
+    margin-right: 20px;
+    color: #8886B2;
+}
+
+#notification > path{
+    stroke-width: 40;
+}
+
+
+#section{
+    width: 85%;
+    margin-top: 10px;
+    height: 82vh;
+}
+
+#bottomNav{
+    position: absolute;
+    bottom: 5vh;
+    filter: blur(4);
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 2px 10px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 15px );
+    border-radius: 10px;
+}
+
+.btn{
+    width: 70px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover{
+    background-color: #E6EFFB;
+}
+
+
+#button > path {
+    stroke-width: 2px;
+}
+
+#button{
+    color: #8886B2;
+}
+
+.active > #button{
+    color: #2A1D69;
+}

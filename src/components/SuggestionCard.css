@@ -1,0 +1,32 @@
+#SuggestionCard{
+    width: 70%;
+    margin-left: 40px;
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#SuggestUserImg{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+#sphotonname{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #8886B2;
+}
+
+#SuggestUserName{
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#addFriend{
+    color: #8886B2;
+}

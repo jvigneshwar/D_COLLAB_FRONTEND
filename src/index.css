@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#root{
+    width: 100vw;
+    height: var(--vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+:root{
+    --pcolor : #8886B2;
+    --pcolor1 : #E6EFFB;
+    --pcolor2 : #2A1D69;
+    --vh:1vh;
+}

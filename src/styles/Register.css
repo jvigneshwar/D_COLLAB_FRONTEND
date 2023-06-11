@@ -1,0 +1,65 @@
+#input{
+    display: none;
+}
+
+#userb{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#useri{
+    width: 100%;
+}
+
+input[type="text"],[type="password"],[type="email"]{
+    padding: 13px;
+    border: 2px solid var(--pcolor1);
+    border-radius: 8px;
+    margin-top: 12px;
+    width: 240px;
+    font-size: 15px;
+}
+
+input[type="text"]:focus,[type="password"]:focus,[type="email"]:focus{
+    outline: none;
+    border: 2px solid var(--pcolor);
+}
+
+.pro{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 320px) and (max-width:480px) {
+    
+    .signupLinkText{
+        display: none;
+    }
+    .signupLink{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80px;
+        border-radius: 10px 0px 0px 10px;
+        background-color: var(--pcolor1);
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .signupLink > a{
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .rloginForm{
+        transform: translateY(-50px);
+        padding-top: 10px;
+        background-color: white;
+    }
+}

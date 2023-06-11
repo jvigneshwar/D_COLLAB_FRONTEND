@@ -1,0 +1,66 @@
+#postcard{
+    width: 87%;
+    min-height: 70%;
+    border-radius: 15px;
+    margin-left: 40px;
+    margin-top: 40px;
+    border: 3px solid #E6EFFB;
+    overflow: hidden;
+    display: flex;
+}
+
+#postimage{
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: #e6effb7b;
+}
+
+#postcontrols{
+    width: 10%;
+    height: 100%;
+}
+
+#share{
+    color: #8886B2;
+    cursor: pointer;
+}
+
+#like{
+    color: #8886B2;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+#like > path{
+    stroke-width:4.5;
+}
+
+#userimage{
+    width: 35px;
+    height: 35px;
+    background-color: #E6EFFB;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#postcontrols{
+    display: flex;
+    height: 90%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#postimageinner
+{
+    height: 100%;
+}
+
+#control{
+    display: flex;
+    flex-direction: column-reverse;
+}

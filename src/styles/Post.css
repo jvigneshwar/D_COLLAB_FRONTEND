@@ -1,0 +1,221 @@
+#all{
+    width: 90%;
+    height: 90%;
+    display: flex;
+}
+
+.left{
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+    border: 3px solid var(--pcolor1);
+    border-right: none;
+}
+
+#postImage{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#draw{
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+#image{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 100%;
+}
+
+.right{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0px 20px 20px 0px;
+    border: 3px solid var(--pcolor1);
+    border-left: none;
+}
+
+#userName{
+    font-family: 'inter',sans-serif ;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--pcolor);
+}
+
+.authorouter{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#author{
+    width: 100%;
+}
+
+.authorcard{
+    width: 80%;
+    height: 18%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postButtons{
+    margin-top: 20px;
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.suggestb{
+    font-family: 'inter',sans-serif ;
+    padding: 20px;
+
+}
+
+.ratingb{
+    font-family: 'inter',sans-serif ;
+    padding: 20px;
+}
+
+
+.post-suggestCardo > input{
+    display: none;
+}
+
+.post-suggestCardo > input + div{
+    border: 2px solid var(--pcolor1);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.post-suggestCardo > input:checked + div{
+    border: 2px solid var(--pcolor);
+}
+
+.MuiTabPanel-root{
+    padding: 0px !important;
+    padding-top: 10px !important;
+    height: 70%;
+    overflow-y: scroll;
+}
+
+.MuiTabPanel-root::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px;
+}
+.MuiTabPanel-root::-webkit-scrollbar-track{
+    margin-top: 30px;
+}
+
+
+
+.sugesterName{
+    font-family: 'inter',sans-serif;
+    font-size: 14px;
+    color: var(--pcolor);
+}
+
+.suggestbody{
+    overflow-wrap: break-word;
+    font-family: 'inter',sans-serif;
+    font-size: 17px;
+}
+
+.sendr{
+    position: absolute;
+    bottom: 0%;
+    margin-bottom: 60px;
+    display: flex;
+    height: 35px;
+    /* align-items: center; */
+}
+
+input[type=color]{
+	width: 40px;
+	height: 40px;
+	border: none;
+	background: none;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: solid 2px var(--pcolor1); 
+    border-right: none;
+	border-radius: 10px 0px 0px 10px;
+}
+
+#suggest{
+    height: 36px;
+    margin-top: 0px;
+    border-radius: 0px;
+    width: 190px;
+    border: 2px solid var(--pcolor1);
+    padding: 0px 10px;
+    border-left: none;
+    border-right: none;
+}
+
+#rate{
+    font-family: 'inter',sans-serif;
+    font-size: 17px;
+    margin-top: 20px;
+    color: var(--pcolor);
+}
+
+#rating{
+    height: 35px;
+    width: 200px;
+    border: 2px solid var(--pcolor);
+    padding: 0px 10px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#rating:focus{
+    outline: none;
+}
+
+#send{
+    padding: 0px 15px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    height: 40px;
+    background-color: var(--pcolor1);
+    color: var(--pcolor2);
+
+}
+#send:hover{
+    transition: .2s;
+    background-color: var(--pcolor2);
+    color: white;
+}
+
+#suggest:focus{
+    outline: none;
+}
+
+.MuiButtonBase-root{
+    color: var(--pcolor) !important;
+    font-family: 'inter',sans-serif !important;
+    font-weight: 500;
+}
+
+.MuiTabs-indicator{
+    background-color: var(--pcolor) !important;
+    height: 2px !important;
+}

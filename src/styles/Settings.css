@@ -1,0 +1,34 @@
+#logout{
+    padding: 8px 15px;
+    border-radius: 7px;
+    border: none;
+    background-color: var(--pcolor1);
+    color: var(--pcolor2);
+    font-family: 'inter' , sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#logoutsection{
+    margin-top: 30px;
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--pcolor1);
+    padding: 10px 10px 10px 20px;
+    border-radius: 10px;
+}
+
+#logout:hover{
+    transition: .2s;
+    background-color: var(--pcolor2);
+    color: white;
+}
+
+#logoutText{
+    color: var(--pcolor2);
+    font-family: 'inter' , sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}

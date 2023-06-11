@@ -1,0 +1,118 @@
+.outerBorder{
+    width: 85%;
+    height: 85%;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to bottom left, #E6EFFB, #e6effb00) border-box;
+    border-radius: 25px;
+    border: 4px solid transparent;
+    display: flex;
+    font-family: 'inter',sans-serif;
+}
+
+.lleft{
+    width: 65%;
+}
+
+#loginBg{
+    width: 79%;
+}
+
+.lright{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.loginText{
+    color: var(--pcolor2);
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.username{
+    padding: 13px;
+    border: 2px solid var(--pcolor1);
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 240px;
+    font-size: 15px;
+}
+
+.username:focus{
+    outline: none;
+    border-color: var(--pcolor);
+}
+
+.password{
+    padding: 13px;
+    border: 2px solid var(--pcolor1);
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 240px;
+    font-size: 15px;
+}
+
+.password:focus{
+    outline: none;
+    border-color: var(--pcolor);
+}
+
+.loginButton{
+    padding: 13px;
+    border: none;
+    background-color: var(--pcolor1);
+    font-family: 'inter',sans-serif;
+    color: var(--pcolor);
+    font-weight: 500;
+    border-radius: 100px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.loginButton:hover{
+    transition: .2s;
+    background-color: var(--pcolor);
+    color: white;
+}
+
+.signupLink{
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+@media (min-width: 320px) and (max-width:480px) {
+    .outerBorder{
+        position: relative;
+        width: 90%;
+        height: 95%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .lleft{
+        width: 100%;
+        height: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #loginBg{
+        width: auto;
+        height: 90%;
+    }
+    .lright{
+        width: 100%;
+        height: 45%;
+    }
+    
+}
+
