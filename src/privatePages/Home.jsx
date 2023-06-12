@@ -7,6 +7,12 @@ const Home = () => {
     
     const [post,setPost] = useState(null);
     const [suggestUser,setSuggestUser] = useState(null);
+    const [showSuggest,setShowSuggest] = useState(true);
+    useEffect(()=>{
+        if(window.innerWidth < 480){
+            setShowSuggest(false);
+        }
+    },[])
     useEffect(()=>{
         fetch(`${process.env.REACT_APP_API_ADDRESS}/api/home`,
         {
@@ -37,6 +43,7 @@ const Home = () => {
                     )})
                 }
             </div>
+            {showSuggest ? 
             <div className="suggestion">
                 <h3 id="suggesthead">Suggestions</h3>
                 {
@@ -47,6 +54,9 @@ const Home = () => {
                     })
                 }
             </div>
+            :
+            <></>
+            }
         </div>
     );
 }

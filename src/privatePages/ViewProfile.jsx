@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams,Link } from 'react-router-dom'
 import defaultUser from "../asserts/defaultuser.png"
 import toast,{Toaster} from 'react-hot-toast';
-import "../styles/Profile.css";
+import "../styles/ViewProfile.css";
 
 const ViewProfile = () => {
     const [username,setUsername] = useState(null);
@@ -22,7 +22,7 @@ const ViewProfile = () => {
     },[userid])
   return (
     <div id='profile'>
-        <div className="user">
+        <div className="user2">
             <div className='innerUser'>
                 <div className="userImage">
                     <img src={userImg || defaultUser} alt="userimg" className='innerUserImage'/>
@@ -43,9 +43,9 @@ const ViewProfile = () => {
         <div className="posts2">
             {posts && posts.map((element)=>{
             return(
-            <div className='post1'>
+            <div className='post2'>
                 <Link to={`/post/${element._id}`}>
-                <div id="postimage1">
+                <div id="postimage21">
                     <img src={`${process.env.REACT_APP_API_ADDRESS}/images/${element.imageName}`} alt="posts" />
                 </div>
                 </Link>

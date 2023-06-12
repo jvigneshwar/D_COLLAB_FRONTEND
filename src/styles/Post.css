@@ -219,3 +219,46 @@ input[type="color"]::-webkit-color-swatch {
     background-color: var(--pcolor) !important;
     height: 2px !important;
 }
+
+
+
+@media (min-width: 320px) and (max-width:480px) {
+    #all{
+        flex-direction: column;
+        height: 95%;
+    }
+
+    .left{
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+        border: 3px solid var(--pcolor1);
+        border-bottom: none;
+    }
+
+    .right{
+        width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        border: 3px solid var(--pcolor1);
+        border-top: none;
+    }
+    .authorcard{
+        width: 85%;
+        flex-direction: row-reverse;
+        height: fit-content;
+        margin-bottom: 5px;
+    }
+    .authorouter{
+        border: 2px solid var(--pcolor1);
+        width: 40px;
+        height: 40px;
+    }
+    #userName{
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    .sendr{
+        margin-bottom: 40px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}

@@ -45,3 +45,18 @@
     color: #2A1D69;
     font-size: 18px;
 }
+
+
+@media (min-width: 320px) and (max-width:480px) {
+    .posts{
+        width: 100%;
+        align-items: center;
+        border: none;
+        background: none;
+        border-radius: 0px;
+        overflow-x: visible;
+    }
+    .posts::-webkit-scrollbar{
+        display: none;
+    }
+}

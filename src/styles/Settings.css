@@ -32,3 +32,9 @@
     font-weight: 500;
     font-size: 15px;
 }
+
+@media (min-width: 320px) and (max-width:480px) {
+    #logoutsection{
+        width: 90%;
+    }
+}

@@ -64,3 +64,35 @@
     display: flex;
     flex-direction: column-reverse;
 }
+
+@media (min-width: 320px) and (max-width:480px) {
+    #postcard{
+        width: 98%;
+        min-height: 270px;
+        margin: 0 0 20px 0;
+        flex-direction: column;
+    }
+    #postimage{
+        width: 100%;
+    }
+
+    #postcontrols{
+        flex-direction: row;
+        width: 90%;
+        height: fit-content;
+    }
+    #control{
+        flex-direction: row;
+        gap: 15px;
+    }
+    #like{
+        margin-bottom: 0;
+    }
+    #userimage{
+        width: 30px;
+        height: 30px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 2px solid var(--pcolor1);
+    }
+}

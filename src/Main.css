@@ -65,3 +65,14 @@
 .active > #button{
     color: #2A1D69;
 }
+
+@media (min-width: 320px) and (max-width:480px) {
+    #topNav{
+        width: 95%;
+    }
+
+    #logo{
+        height: 4vh;
+    }
+
+}

@@ -1,12 +1,16 @@
 #SearchCard{
     width: 31.5%;
     margin-top: 25px;
-    margin-left: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+#addFriendOut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #SuggestUserImg{
     width: 45px;
@@ -29,4 +33,11 @@
 
 #addFriend{
     color: #8886B2;
+}
+
+@media (min-width: 320px) and (max-width:480px) {
+    #SearchCard{
+        margin-left: 0px;
+        width: 100%;
+    }
 }
