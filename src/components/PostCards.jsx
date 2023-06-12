@@ -17,7 +17,7 @@ const PostCards = (props) => {
         <div id="postcontrols">
           <img src={props.data.author.userimg || defaultUser} alt="userimage" id="userimage"/>
           <div id="control">
-            <Icon icon="mingcute:share-forward-line" height="28px" id="share" onClick={()=>{navigator.clipboard.writeText(`http://localhost:3000/post/${props.data._id}`).then(toast.success('copied to clipboard')).catch((err)=>{toast.error("failed to copy")})}}/>
+            <Icon icon="mingcute:share-forward-line" height="28px" id="share" onClick={()=>{navigator.clipboard.writeText(`https://d-collab.onrender.com/post/${props.data._id}`).then(toast.success('copied to clipboard')).catch((err)=>{toast.error("failed to copy")})}}/>
             <Toaster
               position='bottom-right'
               reverseOrder={true}

@@ -30,7 +30,7 @@ const ViewProfile = () => {
                 <div className='userName'>{username}</div>
             </div>      
             <button className='postDesign' onClick={()=>{
-                navigator.clipboard.writeText(`${process.env.REACT_APP_API_ADDRESS}/profileView/${userid}`)
+                navigator.clipboard.writeText(`https://d-collab.onrender.com/profileView/${userid}`)
                 .then(toast.success('copied to clipboard'))
                 .catch((err)=>{toast.error("failed to copy")})
             }}>Share Profile</button>
