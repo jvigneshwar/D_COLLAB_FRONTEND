@@ -10,11 +10,11 @@ import Login from "./publicPages/Login";
 import Summa from "./publicPages/Summa";
 import Post from "./privatePages/Post";
 import ViewProfile from "./privatePages/ViewProfile";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   useEffect(()=>{
     const vh = window.innerHeight;
-    console.log(vh);
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   },[])
   return(
@@ -32,6 +32,7 @@ const App = () => {
             <Route path="/post/:id" element={<Post/>}/>
             <Route path="/profileView/:userid" element={<ViewProfile/>}/>
         </Routes>
+        <Toaster />
       </BrowserRouter>
   );
 }

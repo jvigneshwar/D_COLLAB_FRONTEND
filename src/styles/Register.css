@@ -38,11 +38,26 @@ input[type="text"]:focus,[type="password"]:focus,[type="email"]:focus{
     margin-bottom: 10px;
 }
 
+.signupLink{
+    position: absolute;
+    top: 8%;
+    right: 7.5%;
+    width: 80px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: var(--pcolor1);
+    text-align: center;
+}
+
+.signupLink > a{
+    text-decoration: none;
+    font-weight: 500;
+    width: 100%;
+    display: block;
+    padding: 10px 0px;
+}
+
 @media (min-width: 320px) and (max-width:480px) {
-    
-    .signupLinkText{
-        display: none;
-    }
+
     .signupLink{
         position: absolute;
         top: 0;

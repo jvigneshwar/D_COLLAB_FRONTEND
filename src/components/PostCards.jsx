@@ -12,7 +12,7 @@ const PostCards = (props) => {
     
     <div id="postcard">
         <Link to={`/post/${props.data._id}`} id="postimage">
-          <img src={`${process.env.REACT_APP_API_ADDRESS}/images/${props.data.imageName}`} alt="post" id="postimageinner" />
+          <img src={props.data.imageUrl} alt="post" id="postimageinner" />
         </Link>
         <div id="postcontrols">
           <img src={props.data.author.userimg || defaultUser} alt="userimage" id="userimage"/>

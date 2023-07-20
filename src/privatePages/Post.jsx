@@ -7,12 +7,14 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import { toast } from 'react-hot-toast';
 
 const Post = () => {
 
     const {id} = useParams();
     const [postData,setPostData] = useState(null);
-    const [update,setUpdate] = useState(0);
+    const [update,setUpdate] = useState(false);
+    const [sending,setSending] = useState(false)
     
     useEffect(()=>{
       fetch(`${process.env.REACT_APP_API_ADDRESS}/post/${id}`)
@@ -85,6 +87,7 @@ const Post = () => {
 
   function sendSuggest() {
     cleanrext()
+    setSending(true);
     setIsDrawable(false)
     fetch(`${process.env.REACT_APP_API_ADDRESS}/postSuggest`,
       {
@@ -103,14 +106,22 @@ const Post = () => {
     .then((res)=>res.json())
     .then((data)=>{
       console.log(data);
-      setUpdate(update+1)
+      setSuggestBody("");
+      setSending(false);
+      setUpdate(!update)
+    })
+    .catch((err)=>{
+      setSending(false);
     })
   } 
 
   const [rating,setRating] = useState(null);
   function sendRating(){
+    setSending(true)
     if(rating < 0 || rating > 5){
-      alert("rating should be given between 0 - 5")
+      toast.error("rating should be given between 0 - 5")
+      setRating("");
+      setSending(false)
       return;
     }
     fetch(`${process.env.REACT_APP_API_ADDRESS}/postRating`,
@@ -128,7 +139,10 @@ const Post = () => {
     .then((data)=>{
       setResultRating(data.savedPost.rating / data.savedPost.ratingCount)
       console.log(data);
+      setRating("");
+      setSending(false);
     })
+    .catch((err)=>{toast.error("error while sending rating")})
   }
 
   const [value, setValue] = React.useState('1');
@@ -141,7 +155,7 @@ const Post = () => {
   <div id='all'>
     <div className="left">
       <div id='postImage'>
-        <img src={`${process.env.REACT_APP_API_ADDRESS}/images/${postData && postData.imageName}`} alt={postData && postData.imageName} id='image' onLoad={(e)=>{setSize({height : e.target.clientHeight , width : e.target.clientWidth})}}/>
+        <img src={postData && postData.imageUrl} alt={postData && postData.imageName} id='image' onLoad={(e)=>{setSize({height : e.target.clientHeight , width : e.target.clientWidth})}}/>
         <canvas
           id="draw"
           ref={canvasRef}
@@ -172,7 +186,7 @@ const Post = () => {
         <TabPanel value="1">
           {postData && postData.Suggestions.map((element,index)=>{
             return(
-              <label className='post-suggestCardo'>
+              <label key={index} className='post-suggestCardo'>
                 <input type="radio" name="radioname" value={index} />
                 <div key={index} id={index} className="post-suggestCard" onClick={drawRct}>
                   <div className='sugesterName'>{element.author}</div>
@@ -192,15 +206,15 @@ const Post = () => {
               ctx.lineWidth = 3;
               ctx.stroke();
             }}/>
-            <input type="text" placeholder='Suggest'  id="suggest" onChange={(e)=>{setSuggestBody(e.target.value)}} onFocus={()=>{setIsDrawable(true);cleanrext()}} />
-            <input type="submit" value="Send" onClick={sendSuggest} id="send"/>
+            <input type="text" placeholder='Suggest'  id="suggest" disabled={sending} onChange={(e)=>{setSuggestBody(e.target.value)}} value={suggestBody} onFocus={()=>{setIsDrawable(true);cleanrext()}} />
+            <input type="submit" value={sending ? "Sending.." : "Send"} disabled={sending} onClick={sendSuggest} id="send"/>
           </div>
         </TabPanel>
         <TabPanel value="2">
           <div id='rate'>Rating : {resultRating || "0"}</div>
           <div className="sendr">
-            <input type="number" placeholder='between 0 - 5' min={0} max={5} id="rating" onChange={(e)=>{setRating(e.target.value)}}/>
-            <input type="submit" id="send" value="send rating" onClick={sendRating}/>
+            <input type="number" placeholder='between 0 - 5' min={0} max={5} id="rating" disabled={sending} value={rating} onChange={(e)=>{setRating(e.target.value)}}/>
+            <input type="submit" id="send" value={sending ?  "Sending.." : "Send Rating"} disabled={sending} onClick={sendRating}/>
           </div>
           </TabPanel>
       </TabContext>

@@ -68,19 +68,25 @@
 .loginButton{
     padding: 13px;
     border: none;
-    background-color: var(--pcolor1);
+    background-color: var(--pcolor);
     font-family: 'inter',sans-serif;
-    color: var(--pcolor);
+    color: white;
     font-weight: 500;
     border-radius: 100px;
     margin-top: 20px;
     width: 100%;
     font-size: 15px;
+    cursor: pointer;
+}
+
+.loginButton:disabled{
+    background-color: var(--pcolor1);
+    opacity: .5;
 }
 
 .loginButton:hover{
     transition: .2s;
-    background-color: var(--pcolor);
+    opacity: .8;
     color: white;
 }
 
