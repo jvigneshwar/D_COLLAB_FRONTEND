@@ -4,6 +4,7 @@ import defaultUser from "../asserts/defaultuser.png"
 import { Icon } from '@iconify/react';
 import "../styles/Profile.css";
 import { toast } from 'react-hot-toast';
+import ProfilePostCard from '../components/ProfilePostCard';
 
 const Profile = () => {
   const [username, setUsername] = useState(null);
@@ -13,6 +14,7 @@ const Profile = () => {
   const [showUpload, setShowUpload] = useState(false);
   const [image, setImage] = useState("https://www.meu.edu.in/wp-content/uploads/2021/09/placeholder-240.png");
   const [loading, setLoading] = useState(false);
+  const [deleteLoading,setDeleteLoading] = useState(false)
 
   const navigate = useNavigate();
 
@@ -27,19 +29,18 @@ const Profile = () => {
       })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.status === "ok") {
           setUsername(data.username)
           setUserImg(data.userImg)
-          setPosts(data.posts)
+          setPosts(data.posts.reverse())
         }
         else {
           navigate('/')
         }
         setLoading(false)
       })
-  }, [updte, navigate])
-
+  }, [updte, navigate,deleteLoading])
 
   const handleFileSelect = (event) => {
     const reader = new FileReader();
@@ -51,6 +52,10 @@ const Profile = () => {
 
   const handleUpload = (event) => {
     event.preventDefault();
+    if(image === "https://www.meu.edu.in/wp-content/uploads/2021/09/placeholder-240.png"){
+      toast.error("file not selected");
+      return;
+    }
     const toastId = toast.loading("Upoading...");
     fetch(`${process.env.REACT_APP_API_ADDRESS}/api/upload`,
       {
@@ -81,6 +86,7 @@ const Profile = () => {
         console.log(err);
       })
     setShowUpload(false)
+    setImage("https://www.meu.edu.in/wp-content/uploads/2021/09/placeholder-240.png")
   };
 
 
@@ -117,13 +123,7 @@ const Profile = () => {
         :
         posts && posts.map((element, ind) => {
           return (
-            <div key={ind} className='post1'>
-              <Link to={`/post/${element._id}`}>
-                <div id="postimage1">
-                  <img src={`${element.imageUrl}`} alt="posts" />
-                </div>
-              </Link>
-            </div>
+            <ProfilePostCard key={ind} element={element} username={username} setDeleteLoading={setDeleteLoading}/>
           );
         })
         }

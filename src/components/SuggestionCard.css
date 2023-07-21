@@ -12,6 +12,14 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#InnerSuggestUserImg{
+    width: 100%;
 }
 
 #sphotonname{

@@ -11,7 +11,9 @@ const SuggestionCard = (props) => {
     
     <div id="SuggestionCard">
         <div id="sphotonname">
-            <img src={props.data.userimg || defaultUser} alt="SuggestUserImg" id="SuggestUserImg"/>
+            <div id="SuggestUserImg">
+              <img src={props.data.userimg || defaultUser} alt="SuggestUserImg" id="InnerSuggestUserImg"/>
+            </div>
             <p id="SuggestUserName">{props.data.username}</p>
         </div>
         <Link to={`/profileView/${props.data._id}`}>

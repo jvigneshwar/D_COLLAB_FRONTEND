@@ -71,6 +71,7 @@ input[type="text"]:focus,[type="password"]:focus,[type="email"]:focus{
     .signupLink > a{
         text-decoration: none;
         font-weight: 500;
+        padding: 0px 0px;
     }
     .rloginForm{
         transform: translateY(-50px);

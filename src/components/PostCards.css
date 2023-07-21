@@ -44,6 +44,13 @@
     background-color: #E6EFFB;
     border-radius: 20px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inneruserimage{
+    width: 100%;
 }
 
 #postcontrols{
@@ -57,7 +64,9 @@
 
 #postimageinner
 {
-    height: 100%;
+    width: 100%;
+    height:100%;
+    object-fit:contain;
 }
 
 #control{

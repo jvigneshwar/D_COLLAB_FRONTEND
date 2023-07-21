@@ -55,6 +55,7 @@
     border-radius: 5px;
     color: var(--pcolor2);
     background-color: var(--pcolor1);
+    cursor: pointer;
 }
 
 .postDesign:hover{
@@ -84,7 +85,9 @@
 
 
 #postimage1 img{
-    height: 250px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 
@@ -95,6 +98,11 @@
     height: 390px;
     margin-top: 20px;
     overflow-y: scroll;
+}
+
+.post1 a{
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
 
 
@@ -117,9 +125,9 @@
     width: 250px;
     height: 250px;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
     border: 3px solid var(--pcolor1);
 }
 
@@ -147,6 +155,7 @@
     border-radius: 5px;
     color: var(--pcolor2);
     background-color: var(--pcolor1);
+    cursor: pointer;
 }
 
 #uploadBtn:hover{
@@ -166,6 +175,7 @@
 }
 
 #uploadImage{
+    cursor: pointer;
     height: 100%;
 }
 
@@ -174,6 +184,7 @@
     color: var(--pcolor2);
     padding: 6px;
     border-radius: 10px;
+    cursor: pointer;
 }
 #back:hover{
     transition: .2s;
@@ -201,6 +212,9 @@
     .userName{
         font-size: 20px;
     }
+    .username-loading{
+        width: 120px;
+    }
     .innerUser{
         gap: 15px;
     }
@@ -212,6 +226,9 @@
     }   
     .post1{
         margin: 0 0 20px 0;
+        width: 100%;
+    }
+    .post-loading{
         width: 100%;
     }
 

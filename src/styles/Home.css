@@ -73,6 +73,12 @@
         border-radius: 0px;
         overflow-x: visible;
     }
+    .home-box-loading{
+        width: 98%;
+        min-height: 270px;
+        margin: 0 0 20px 0;
+        flex-direction: column;
+    }
     .posts::-webkit-scrollbar{
         display: none;
     }
