@@ -46,6 +46,23 @@
     font-size: 18px;
 }
 
+.home-box-loading{
+    width: 87%;
+    min-height: 70%;
+    border-radius: 15px;
+    margin-left: 40px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.suggest-box-loading{
+    height: 45px;
+    border-radius: 10px;
+    width: 70%;
+    margin-left: 40px;
+    margin-top: 18px;
+}
+
 
 @media (min-width: 320px) and (max-width:480px) {
     .posts{

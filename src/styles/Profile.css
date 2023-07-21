@@ -26,6 +26,12 @@
     font-weight: 500;
 }
 
+.username-loading{
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+}
+
 .innerUser{
     display: flex;
     align-items: center;
@@ -91,6 +97,8 @@
     overflow-y: scroll;
 }
 
+
+
 .posts1::-webkit-scrollbar{
     background-color: transparent;
     width: 5px;
@@ -115,6 +123,16 @@
     border: 3px solid var(--pcolor1);
 }
 
+.post-loading{
+    margin: 15px 0px 0px 15px;
+    border-radius: 15px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #upload{
     display: none;

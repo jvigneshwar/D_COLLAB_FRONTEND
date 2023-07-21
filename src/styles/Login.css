@@ -80,7 +80,6 @@
 }
 
 .loginButton:disabled{
-    background-color: var(--pcolor1);
     opacity: .5;
 }
 

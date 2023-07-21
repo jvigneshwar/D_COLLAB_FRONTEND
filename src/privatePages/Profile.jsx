@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import defaultUser from "../asserts/defaultuser.png"
 import { Icon } from '@iconify/react';
 import "../styles/Profile.css";
@@ -13,10 +12,12 @@ const Profile = () => {
   const [updte, setUpdate] = useState(true);
   const [showUpload, setShowUpload] = useState(false);
   const [image, setImage] = useState("https://www.meu.edu.in/wp-content/uploads/2021/09/placeholder-240.png");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    setLoading(true);
     fetch(`${process.env.REACT_APP_API_ADDRESS}/api/profile`,
       {
         method: "GET",
@@ -35,8 +36,9 @@ const Profile = () => {
         else {
           navigate('/')
         }
+        setLoading(false)
       })
-  }, [updte])
+  }, [updte, navigate])
 
 
   const handleFileSelect = (event) => {
@@ -70,12 +72,12 @@ const Profile = () => {
           toast.success("Post Uploaded")
           setUpdate(!updte)
         }
-        else{
+        else {
           toast.dismiss(toastId);
           toast.error("Upload Failed")
         }
       })
-      .catch((err)=>{
+      .catch((err) => {
         console.log(err);
       })
     setShowUpload(false)
@@ -90,7 +92,7 @@ const Profile = () => {
           <div className="userImage">
             <img src={userImg || defaultUser} alt="userimg" className='innerUserImage' />
           </div>
-          <div className='userName'>{username}</div>
+          <div className='userName'>{loading ? <div className='username-loading gradient'></div> : username}</div>
         </div>
         <button className='postDesign' onClick={() => { setShowUpload(true) }}>Post Design</button>
       </div>
@@ -108,7 +110,12 @@ const Profile = () => {
         </form>}
 
       <div className="posts1">
-        {posts && posts.map((element,ind) => {
+        {loading ?
+        <>
+          <div className='post-loading gradient'></div>
+        </>
+        :
+        posts && posts.map((element, ind) => {
           return (
             <div key={ind} className='post1'>
               <Link to={`/post/${element._id}`}>
@@ -118,7 +125,8 @@ const Profile = () => {
               </Link>
             </div>
           );
-        })}
+        })
+        }
       </div>
     </div>
   )
