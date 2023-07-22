@@ -63,6 +63,53 @@
     margin-top: 18px;
 }
 
+.number-nav{
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.num-count{
+    padding: 7px 15px;
+    border:  2px solid var(--pcolor1);
+    border-radius: 5px;
+}
+
+.pre-num{
+    padding: 7px 15px;
+    background-color: var(--pcolor1);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.pre-num:hover{
+    background-color: var(--pcolor);
+    color: white;
+}
+
+.pre-num:disabled{
+    border: none;
+}
+.next-num{
+    padding: 7px 15px;
+    background-color: var(--pcolor1);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.next-num:hover{
+    background-color: var(--pcolor);
+    color: white;
+}
+
+.next-num:disabled{
+    border: none;
+}
+
 
 @media (min-width: 320px) and (max-width:480px) {
     .posts{

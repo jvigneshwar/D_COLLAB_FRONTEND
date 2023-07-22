@@ -1,12 +1,17 @@
 #postcard{
     width: 87%;
     min-height: 70%;
+    max-height: 70%;
     border-radius: 15px;
     margin-left: 40px;
     margin-top: 40px;
     border: 3px solid #E6EFFB;
     overflow: hidden;
     display: flex;
+}
+
+#postcard:last-child{
+    margin-bottom: 10%;
 }
 
 #postimage{

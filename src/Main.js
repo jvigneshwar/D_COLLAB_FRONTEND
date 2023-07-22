@@ -9,7 +9,7 @@ const Main = () => {
     <>
     <div id="topNav">
           <Link to="/main/home"><img src={Logo} alt="logo" id="logo"/></Link>
-          <Icon icon="ion:notifications-outline" height="25px" id="notification" />
+          {/* <Icon icon="ion:notifications-outline" height="25px" id="notification" /> */}
         </div>
         <div id="section">
           <Outlet/>
