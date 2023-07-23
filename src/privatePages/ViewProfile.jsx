@@ -20,7 +20,7 @@ const ViewProfile = () => {
                 console.log(data);
                 setUsername(data.user.username)
                 setUserImg(data.user.userimg)
-                setPosts(data.user.posts)
+                setPosts(data.user.posts.reverse())
                 setLoading(false)
             })
     }, [userid])

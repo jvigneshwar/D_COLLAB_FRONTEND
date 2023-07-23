@@ -129,4 +129,10 @@
     .posts::-webkit-scrollbar{
         display: none;
     }
+
+    .number-nav{
+        margin-left: 0px;
+        margin-top: 10px;
+        margin-bottom: 100px;
+    }
 }
